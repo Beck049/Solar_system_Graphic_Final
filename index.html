@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<link rel="stylesheet" href="style.css">             <!--added link to CSS file-->
+
+<style>
+    .green{
+        background-color:#00ff00
+    }
+    .red{
+        background-color: #ff0000
+    }
+</style>
+<script type="text/javascript" src="Common/webgl-utils.js"></script>
+<script type="text/javascript" src="Common/count-matrix.js"></script>
+<script type="text/javascript" src="Common/math-function.js"></script>
+
+<script type="text/javascript" src="basic-objects-IFS.js"></script>
+<script type="text/javascript" src="obj_class.js"></script>
+
+<script type="text/javascript" src="WebGL.js"></script>
+</head>
+
+<body>
+<canvas id="gl-canvas" width="1280" height="720">
+Oops ... your browser doesn't support the HTML5 canvas element
+</canvas>
+
+<br/>
+Operatoin: <br/>
+WASD to move<br/>
+V to jump<br/>
+LShift to drop<br/>
+Fullscreen: F
+<br/>
+
+<button id="pButton" class="green" onclick="btn_color()">Pause</button>
+<br/>
+<button id="fullscreen-button">Fullscreen</button>
+<br/>
+vertice<input type="range" id="y_sensitivity"  min="0" max="9.9" step="0.1">
+horizon<input type="range" id="x_sensitivity"  min="0" max="9.9" step="0.1">
+range<input type="range" id="FOVcfg"  min="1" max="90" step="1">
+
+</body>
+</html>
+
+<script>
+    var btn_bool = Boolean(true);
+    console.log(!btn_bool);
+    function btn_color(){
+        btn_bool = !btn_bool;
+        var element = document.getElementById("pButton");
+        if(btn_bool == Boolean(true)){
+            element.classList.remove("red");
+            element.classList.add("green");
+        }
+        else{
+            element.classList.remove("green");
+            element.classList.add("red");
+        }
+    }
+</script>
